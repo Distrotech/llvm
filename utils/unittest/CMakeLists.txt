@@ -38,6 +38,9 @@ if(MSVC AND MSVC_VERSION EQUAL 1700)
   add_definitions(-D_VARIADIC_MAX=10)
 endif ()
 
+# Delay building until the tests pull it in, and avoid installing it.
+set(EXCLUDE_FROM_ALL ON)
+
 add_llvm_library(gtest
   googletest/src/gtest-all.cc
   )
